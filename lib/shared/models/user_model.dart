@@ -1,4 +1,4 @@
-import 'dart:convert';
+import "dart:convert";
 
 class UserModel {
   final String name;
@@ -11,20 +11,20 @@ class UserModel {
     this.score = 0,
   });
 
-  factory UserModel.fromMap(Map<String, dynamic> map) {
-    return UserModel(
-      name: map['name'] as String,
-      photoUrl: map['photoUrl'] as String,
-      score: map['score'] as int,
-    );
-  }
-
   Map<String, dynamic> toMap() {
     return {
-      'name': this.name,
-      'photoUrl': this.photoUrl,
-      'score': this.score,
+      "name": name,
+      "photoUrl": photoUrl,
+      "score": score,
     };
+  }
+
+  factory UserModel.fromMap(Map<String, dynamic> map) {
+    return UserModel(
+      name: map["name"],
+      photoUrl: map["photoUrl"],
+      score: map["score"] ?? 0,
+    );
   }
 
   String toJson() => json.encode(toMap());

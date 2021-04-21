@@ -6,19 +6,19 @@ enum Level { easy, medium, hard, expert }
 
 extension LevelStringExt on String {
   Level get parse => {
-        "facil": Level.easy,
-        "medio": Level.medium,
-        "dificil": Level.hard,
-        "perito": Level.expert
+        "easy": Level.easy,
+        "medium": Level.medium,
+        "hard": Level.hard,
+        "expert": Level.expert
       }[this]!;
 }
 
 extension LevelExt on Level {
   String get parse => {
-        Level.easy: "facil",
-        Level.medium: "medio",
-        Level.hard: "dificil",
-        Level.expert: "perito"
+        Level.easy: "easy",
+        Level.medium: "medium",
+        Level.hard: "hard",
+        Level.expert: "expert"
       }[this]!;
 }
 
@@ -51,8 +51,8 @@ class QuizModel {
     return QuizModel(
       title: map['title'],
       questions: List<QuestionModel>.from(
-          map['questions']?.map((x) => QuestionModel.fromMap(x))),
-      questionAnswered: map['questionAnswered'],
+          map['questions'].map((x) => QuestionModel.fromMap(x))),
+      questionAnswered: map['questionAnswered'] ?? 0,
       image: map['image'],
       level: map['level'].toString().parse,
     );
