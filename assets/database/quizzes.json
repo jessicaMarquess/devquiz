@@ -24,6 +24,27 @@
             "isRight": false
           }
         ]
+      },
+      {
+        "title": "O Flutter é?",
+        "answers": [
+          {
+            "title": "Um framework de desenvolvimento mobile multiplataforma.",
+            "isRight": true
+          },
+          {
+            "title": "Um tipo de avestruz.",
+            "isRight": false
+          },
+          {
+            "title": "Um framework que usa a linguagem JavaScript.",
+            "isRight": false
+          },
+          {
+            "title": "Um aplicativo de fotos.",
+            "isRight": false
+          }
+        ]
       }
     ]
   }

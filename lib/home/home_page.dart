@@ -1,3 +1,4 @@
+import 'package:DevQuiz/challenge/challenge_page.dart';
 import 'package:DevQuiz/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:DevQuiz/core/core.dart';
 import 'package:DevQuiz/home/home_controller.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 24,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,6 +73,14 @@ class _HomePageState extends State<HomePage> {
                               percent: e.questionAnswered / e.questions.length,
                               completed:
                                   "${e.questionAnswered}/${e.questions.length}",
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ChallengePage(
+                                              questions: e.questions,
+                                            )));
+                              },
                             ))
                         .toList(),
                   ),
